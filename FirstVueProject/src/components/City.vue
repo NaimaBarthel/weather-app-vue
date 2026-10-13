@@ -1,4 +1,5 @@
 <script setup>
+import { format } from 'timeago.js'
 defineProps(['name', 'weather', 'temperature', 'updatedAt'])
 </script>
 <template>
@@ -6,7 +7,7 @@ defineProps(['name', 'weather', 'temperature', 'updatedAt'])
     <h2>{{ name }}</h2>
         <p>Temps : {{ weather }}</p>
         <p>Température : {{ temperature }} °C</p>
-        <p>Dernière mise à jour : {{ updatedAt?.toLocaleString() }}</p>
+        <p>Dernière mise à jour : {{ format(updatedAt,'fr') }}</p>
     </div>
 </template>
 
