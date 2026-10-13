@@ -1,16 +1,11 @@
 <script setup>
-    const city = {
-        name: 'Ma ville',
-        weather: 'Peu nuageux',
-        temperature: 20.55,
-        updatedAt: new Date(),
-    };
+defineProps(['name', 'weather', 'temperature', 'updatedAt'])
 </script>
 <template>
     <div>
-    <h2>{{ city.name }}</h2>
-        <p>Temps : {{ city.weather }}</p>
-        <p>Température : {{ city.temperature }} °C</p>
-        <p>Dernière mise à jour : {{ city.updatedAt.toLocaleString() }}</p>
+    <h2>{{ name }}</h2>
+        <p>Temps : {{ weather }}</p>
+        <p>Température : {{ temperature }} °C</p>
+        <p>Dernière mise à jour : {{ updatedAt?.toLocaleString() }}</p>
     </div>
 </template>
